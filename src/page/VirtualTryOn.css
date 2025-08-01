@@ -1,26 +1,101 @@
 .tryon-container {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #f7f1e1; /* nền be */
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: white;
   }
   
-  .tryon-container h1 {
-    font-size: 28px;
-    color: #5d4037; /* nâu đất */
+  .tryon-video {
+    width: 400px;
+    height: 300px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
     margin-bottom: 20px;
-    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   }
   
   .tryon-canvas {
-    border-radius: 16px;
-    border: 3px solid #aed581; /* xanh cốm */
-    box-shadow: 0 10px 25px rgba(240, 98, 146, 0.3); /* hồng đào nhạt */
-    max-width: 90vw;
-    height: auto;
+    width: 400px;
+    height: 300px;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   }
   
+  .measurements-display {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 25px;
+    width: 400px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  
+  .measurements-display h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 22px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .measurement-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .measurement-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .measurement-item:last-child {
+    border-bottom: none;
+  }
+  
+  .measurement-item span {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  /* Thêm styles cho tiêu đề */
+  .tryon-container h1 {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Thêm hiệu ứng loading */
+  @keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+  }
+  
+  .measurement-item strong {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #ff6b6b, #feca57);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: pulse 2s infinite;
+  }
