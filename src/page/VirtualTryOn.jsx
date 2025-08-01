@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
-import "./VirtualTryOnPage.css";
+
+import "./VirtualTryOn.css";
 import {
   FilesetResolver,
   PoseLandmarker,
@@ -79,10 +80,10 @@ export default function VirtualTryOnPage() {
             const leftHip = landmarks[23];
             const rightHip = landmarks[24];
             
-            const x = leftShoulder.x * canvas.width;
-            const y = leftShoulder.y * canvas.height;
-            const width = (rightShoulder.x - leftShoulder.x) * canvas.width;
-            const height = (leftHip.y - leftShoulder.y) * canvas.height;
+            const x = leftShoulder.x * canvas.width ;
+            const y = leftShoulder.y * canvas.height ;
+            const width = (rightShoulder.x - leftShoulder.x) * canvas.width ;
+            const height = (leftHip.y - leftShoulder.y) * canvas.height ;
             
             ctx.drawImage(aoDaiImage.current, x, y, width, height);
             
@@ -114,8 +115,9 @@ export default function VirtualTryOnPage() {
 
   return (
     <div className="tryon-container">
-  <h2>Virtual Try-On with Áo Dài</h2>
+  <h1>Your look</h1>
   <video ref={videoRef} className="tryon-video" />
+  <h1>Virtual Try-On</h1>
   <canvas ref={canvasRef} className="tryon-canvas" />
 </div>
 
